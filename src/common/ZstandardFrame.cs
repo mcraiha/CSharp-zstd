@@ -2,6 +2,7 @@ using System;
 
 namespace CSharp_zstd
 {
+	/*
 	public class ZstandardFrame
 	{
 		public readonly byte[] magicValue = new byte[] { 0xFD, 0x2F, 0xB5, 0x28 };
@@ -17,4 +18,5 @@ namespace CSharp_zstd
 
 		}
 	}
+	*/
 }
