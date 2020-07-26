@@ -80,14 +80,14 @@ namespace CSharp_zstd
 			throw new ArgumentException($"{offset}, {reason}");
 		}
 
-		public static int CycleLog(int hashLog, Strategy strategy)
+		/*public static int CycleLog(int hashLog, Strategy strategy)
 		{
 			int cycleLog = hashLog;
 			if (strategy == Strategy.BTLAZY2 || strategy == Strategy.BTOPT || strategy == Strategy.BTULTRA) {
 				cycleLog = hashLog - 1;
 			}
 			return cycleLog;
-		}
+		}*/
 
 		/*public static void put24BitLittleEndian(Object outputBase, long outputAddress, int value)
 		{
