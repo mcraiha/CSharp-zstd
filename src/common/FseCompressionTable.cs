@@ -4,6 +4,7 @@ namespace CSharp_zstd
 {
 	public class FseCompressionTable
 	{
+		/*
 		private readonly short[] nextState;
 		private readonly int[] deltaNumberOfBits;
 		private readonly int[] deltaFindState;
@@ -79,7 +80,7 @@ namespace CSharp_zstd
 			for (int i = 0; i < tableSize; i++) 
 			{
 				byte symbol = table[i];
-				nextState[cumulative[symbol]++] = (short) (tableSize + i);  /* TableU16 : sorted by symbol order; gives next state value */
+				nextState[cumulative[symbol]++] = (short) (tableSize + i);  // TableU16 : sorted by symbol order; gives next state value 
 			}
 
 			// Build symbol transformation table
@@ -125,6 +126,7 @@ namespace CSharp_zstd
 			stream.AddBits(state, log2Size);
 			stream.Flush();
 		}
+		*/
 
 		private static int CalculateStep(int tableSize)
 		{
