@@ -34,5 +34,24 @@ namespace tests
 			Assert.AreEqual(uncompressed.Length, decompressedSize);
 			CollectionAssert.AreEqual(uncompressed, outputPaddingRemoved);
 		}
+
+		[Test]
+		public void DecompressSampleFileTest()
+		{
+			// Arrange
+			byte[] compressed = File.ReadAllBytes(Path.Combine(TestContext.CurrentContext.TestDirectory,"testfiles/z000107.zst"));
+			byte[] uncompressed = File.ReadAllBytes(Path.Combine(TestContext.CurrentContext.TestDirectory,"testfiles/z000107"));
+
+			byte[] output = new byte[uncompressed.Length]; // pre + post padding
+
+			ZstdDecompressor decompressor = new ZstdDecompressor();
+
+			// Act
+			int decompressedSize = decompressor.Decompress(compressed, 0, compressed.Length, output, 0, output.Length);
+
+			// Assert
+			Assert.AreEqual(uncompressed.Length, decompressedSize);
+			CollectionAssert.AreEqual(uncompressed, output);
+		}
 	}
 }
