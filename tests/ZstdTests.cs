@@ -31,8 +31,8 @@ namespace tests
 			byte[] outputPaddingRemoved = output.Skip(padding).Take(decompressedSize).ToArray();
 
 			// Assert
-			Assert.AreEqual(uncompressed.Length, decompressedSize);
-			CollectionAssert.AreEqual(uncompressed, outputPaddingRemoved);
+			Assert.That(decompressedSize, Is.EqualTo(uncompressed.Length));
+			Assert.That(outputPaddingRemoved, Is.EqualTo(uncompressed));
 		}
 
 		[Test]
@@ -50,8 +50,8 @@ namespace tests
 			int decompressedSize = decompressor.Decompress(compressed, 0, compressed.Length, output, 0, output.Length);
 
 			// Assert
-			Assert.AreEqual(uncompressed.Length, decompressedSize);
-			CollectionAssert.AreEqual(uncompressed, output);
+			Assert.That(decompressedSize, Is.EqualTo(uncompressed.Length));
+			Assert.That(output, Is.EqualTo(uncompressed));
 		}
 	}
 }

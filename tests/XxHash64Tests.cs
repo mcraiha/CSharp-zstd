@@ -34,11 +34,11 @@ namespace tests
 			ulong hash5 = XxHash64.Hash(PRIME, new BinaryReader( new MemoryStream(buffer)), 0, 4);
 
 			// Assert
-			Assert.AreEqual(0xEF46DB3751D8E999, hash1);
-			Assert.AreEqual(0x4FCE394CC88952D8L, hash2);
-			Assert.AreEqual(0x739840CB819FA723L, hash3);
-			Assert.AreEqual(0x9256E58AA397AEF1L, hash4);
-			Assert.AreEqual(0x9D5FFDFB928AB4BL, hash5);
+			Assert.That(hash1, Is.EqualTo(0xEF46DB3751D8E999));
+			Assert.That(hash2, Is.EqualTo(0x4FCE394CC88952D8L));
+			Assert.That(hash3, Is.EqualTo(0x739840CB819FA723L));
+			Assert.That(hash4, Is.EqualTo(0x9256E58AA397AEF1L));
+			Assert.That(hash5, Is.EqualTo(0x9D5FFDFB928AB4BL));
 		}
 	}
 }
