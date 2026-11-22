@@ -1,4 +1,7 @@
+❗ This project has been deprecated. Please use build-in [ZstandardDecoder](https://learn.microsoft.com/en-us/dotnet/api/system.io.compression.zstandarddecoder?view=net-11.0) ❗
+
 # CSharp-zstd
+
 C# managed implementation of [zstd](https://facebook.github.io/zstd/) (Zstandard) compression algorithm. Currently only the decompression part.
 
 Basically [the RFC](https://tools.ietf.org/html/rfc8478) is too hard to understand, so I just ported existing Zstd implementation from Java based [aircompressor](https://github.com/airlift/aircompressor) to C#. Yes, the porting experience was horrible, because Java does not have unsigned integer types.
